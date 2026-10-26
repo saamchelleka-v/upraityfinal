@@ -28,7 +28,7 @@ const app = express();
 // Enable CORS for frontend requests
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: process.env.FRONTEND_URL ? [process.env.FRONTEND_URL, 'http://localhost:3000'] : (origin, cb) => cb(null, true),
     credentials: true,
   })
 );
