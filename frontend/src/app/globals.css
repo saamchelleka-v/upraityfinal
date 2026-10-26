@@ -1,0 +1,269 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Harietta Bulmer – brand heading font for UPRAITY AND SON */
+@font-face {
+  font-family: 'Harietta Bulmer';
+  src: local('Harietta Bulmer'),
+       local('HariettaBulmer'),
+       local('Harietta-Bulmer'),
+       local('Harietta'),
+       local('Bulmer MT'),
+       local('Bulmer'),
+       url('/fonts/harietta-bulmer.woff2') format('woff2'),
+       url('/fonts/harietta-bulmer.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Optima – Primary site-wide typeface */
+@font-face {
+  font-family: 'Optima';
+  src: local('Optima'),
+       local('Optima Regular'),
+       url('/fonts/optima-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: local('Optima Italic'),
+       url('/fonts/optima-italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: local('Optima Medium'),
+       url('/fonts/optima-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: local('Optima Bold'),
+       url('/fonts/optima-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: var(--font-optima), 'Optima', Optima, Candara, 'Segoe UI', sans-serif;
+  --font-serif: var(--font-optima), 'Optima', Optima, Candara, serif;
+}
+
+:root {
+  --background: #FBFBFB;
+  --foreground: #18181b;
+  --font-optima: var(--font-optima), 'Optima', Optima, Candara, sans-serif;
+  --font-harietta: 'Harietta Bulmer', 'Harietta', 'Bulmer MT', 'Bulmer', var(--font-optima), 'Optima', serif;
+  --stone-gold: #8B7355;
+  --stone-gold-hover: #735d43;
+  --card-bg: #ffffff;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #ededed;
+  --stone-gold: #e5c07b;
+  --stone-gold-hover: #f3d498;
+  --card-bg: #121214;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after,
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-optima), 'Optima', Optima, Candara, sans-serif;
+}
+
+/* Harietta Bulmer utility – apply to UPRAITY AND SON headings only */
+.font-harietta {
+  font-family: var(--font-harietta) !important;
+  letter-spacing: 0.18em;
+}
+
+/* Elegant Font UI Keyframes & Utilities */
+@keyframes font-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes font-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(1.5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes font-pulse-soft {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 0px rgba(229, 192, 123, 0));
+  }
+  50% {
+    opacity: 0.96;
+    filter: drop-shadow(0 0 10px rgba(229, 192, 123, 0.35));
+  }
+}
+
+/* Shimmering metallic sweep for brand titles */
+.font-elegant-shimmer {
+  background: linear-gradient(
+    105deg,
+    #18181b 0%,
+    #18181b 36%,
+    #8B7355 48%,
+    #b3966d 52%,
+    #18181b 64%,
+    #18181b 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: font-shimmer 7s ease-in-out infinite;
+  display: inline-block;
+}
+
+.dark .font-elegant-shimmer {
+  background: linear-gradient(
+    105deg,
+    #ffffff 0%,
+    #ffffff 38%,
+    #f8e5bd 48%,
+    #e5c07b 52%,
+    #ffffff 62%,
+    #ffffff 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Smooth letter-spacing tracking expansion on hover for interactive font UI */
+.font-track-hover {
+  transition: letter-spacing 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s ease,
+              text-shadow 0.25s ease,
+              transform 0.25s ease;
+}
+
+.font-track-hover:hover {
+  letter-spacing: 0.2em;
+}
+
+/* Entrance animation for font elements */
+.animate-font-entrance {
+  animation: font-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Gold glow text effects */
+.font-glow-gold {
+  text-shadow: 0 0 16px rgba(229, 192, 123, 0.4);
+}
+
+.font-glow-hover {
+  transition: text-shadow 0.3s ease, color 0.2s ease;
+}
+
+.font-glow-hover:hover {
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.6), 0 0 24px rgba(229, 192, 123, 0.35);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Pinterest Masonry layout styling */
+.masonry-columns {
+  column-count: 2;
+  column-gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .masonry-columns {
+    column-count: 3;
+    column-gap: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .masonry-columns {
+    column-count: 4;
+    column-gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-columns {
+    column-count: 5;
+    column-gap: 16px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .masonry-columns {
+    column-count: 6;
+    column-gap: 16px;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Custom Pinterest sleek scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d6d6;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

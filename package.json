@@ -1,0 +1,32 @@
+{
+  "name": "upraity-and-son",
+  "version": "1.0.0",
+  "description": "Upraity And Son - Heritage Stonemasonry, Memorial Architecture, CMS & CRM Web Application",
+  "scripts": {
+    "dev": "concurrently -n \"API,NEXT\" -c \"cyan,magenta\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "start:backend": "npm --prefix backend start",
+    "seed:backend": "npm --prefix backend run seed",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "start:frontend": "npm --prefix frontend start"
+  },
+  "keywords": [
+    "upraity-and-son",
+    "stonemasonry",
+    "memorials",
+    "grave-structures",
+    "nextjs",
+    "nodejs",
+    "express",
+    "mongodb",
+    "crm",
+    "cms",
+    "tailwind"
+  ],
+  "author": "Antigravity",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
