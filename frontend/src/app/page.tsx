@@ -195,20 +195,9 @@ export default function UpraityAndSonPage() {
       {/* Main Content Stream */}
       <main className="flex-1 min-w-0 pt-16 md:pt-0 pb-0">
         <div className="w-full px-4 sm:px-8 xl:px-12 pt-4 sm:pt-8">
-          {/* Top Editorial Banner with visible mobile logo and elegant font animation */}
+          {/* Top Editorial Banner with elegant font animation */}
           <div className="mb-6 pb-4 border-b border-black/10 dark:border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3.5">
-              {/* Prominent Mobile Logo Badge */}
-              <div className="md:hidden w-12 h-12 rounded-2xl bg-gradient-to-b from-neutral-100 to-neutral-200 dark:from-[#222226] dark:to-[#121214] border border-black/10 dark:border-white/25 p-1.5 shadow-xs dark:shadow-[0_4px_16px_rgba(0,0,0,0.5)] shrink-0 flex items-center justify-center ring-1 ring-black/5 dark:ring-white/10">
-                <Image
-                  src="/logo.png"
-                  alt="UPRAITY AND SON Logo"
-                  width={44}
-                  height={44}
-                  priority
-                  className="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_2px_8px_rgba(255,255,255,0.35)]"
-                />
-              </div>
               <div>
                 <h1 className="text-xl sm:text-2xl font-bold uppercase font-harietta tracking-[0.16em] font-elegant-shimmer">
                   UPRAITY AND SON
